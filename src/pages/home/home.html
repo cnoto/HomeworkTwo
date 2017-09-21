@@ -1,14 +1,44 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      The Ten Wonders of the World
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngFor="let wonder of wonders">
+    <img src="assets/images/{{wonder.imgPath}}"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{wonder.title}}
+      </ion-card-title>
+      <p>{{wonder.desc}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button clear icon-start (click)="clickFav(wonder)">
+          <ion-icon [name]="(wonder.favorited) ? 'heart' : 'heart-outline'"></ion-icon>
+          Fav
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button clear icon-start (click)="clickShare(wonder)">
+          <ion-icon [name]="(wonder.shared) ? 'share-alt' : 'ios-share-alt-outline'"></ion-icon>
+          Share
+        </button>
+      </ion-col>
+
+      <ion-col>
+        <button ion-button clear icon-start (click)="clickLike(wonder)">
+          <ion-icon [name]="(wonder.liked) ? 'thumbs-up' : 'ios-thumbs-up-outline'"></ion-icon>
+          Like
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>
