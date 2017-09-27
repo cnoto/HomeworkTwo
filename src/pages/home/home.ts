@@ -7,19 +7,6 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-//   var cardCount = {
-//     number: []
-//   };
-//
-//   for(var i in someData) {
-//
-//     var item = someData[i];
-//
-//     cardCount.number.push({
-//
-//                           });
-// };
-
   wonders = [
     {
       imgPath: "machuPicchu.jpg",
