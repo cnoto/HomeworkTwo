@@ -3,6 +3,7 @@
     <ion-title>
       The Ten Wonders of the World
     </ion-title>
+    <!--<p>My array has this many: <p id="{{wonder.count}}"</p> </p>-->
   </ion-navbar>
 </ion-header>
 
@@ -33,9 +34,9 @@
       </ion-col>
 
       <ion-col>
-        <button ion-button clear icon-start (click)="clickLike(wonder)">
-          <ion-icon [name]="(wonder.liked) ? 'thumbs-up' : 'ios-thumbs-up-outline'"></ion-icon>
-          Like
+        <button ion-button clear icon-start (click)="clickDelete(wonder)">
+          <ion-icon [name]="(wonder.deleted) ? 'ios-trash' : 'ios-trash-outline'"></ion-icon>
+          Delete
         </button>
       </ion-col>
     </ion-row>

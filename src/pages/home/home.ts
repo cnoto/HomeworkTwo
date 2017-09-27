@@ -7,6 +7,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+//   var cardCount = {
+//     number: []
+//   };
+//
+//   for(var i in someData) {
+//
+//     var item = someData[i];
+//
+//     cardCount.number.push({
+//
+//                           });
+// };
+
   wonders = [
     {
       imgPath: "machuPicchu.jpg",
@@ -14,7 +27,7 @@ export class HomePage {
       desc: "Here is a picture of Machu Picchu which is located in Peru.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -23,7 +36,7 @@ export class HomePage {
       desc: "Here is a picture of Petra which is located in Jordan.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -32,7 +45,7 @@ export class HomePage {
       desc: "Here is a picture of the Great Wall of China which is located in China.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -41,7 +54,7 @@ export class HomePage {
       desc: "Here is a picture of Christ the Redeemer which is located in Rio de Janeiro, Brazil.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -50,7 +63,7 @@ export class HomePage {
       desc: "Here is a picture of the colosseum which is located in Rome, Italy.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -59,7 +72,7 @@ export class HomePage {
       desc: "Here is a picture of Chichen Itza which is located in Yucatan Peninsula, Mexico.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -68,7 +81,7 @@ export class HomePage {
       desc: "Here is a picture of the Taj Majal which is located in Agra, India.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -77,7 +90,7 @@ export class HomePage {
       desc: "Here is a picture of the Great Pyramid of Giza which is located in Egypt. It is the largest of the three pyramids and the oldest of the Seven Wonders of the Ancient World.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -86,7 +99,7 @@ export class HomePage {
       desc: "Here is a picture of Stonehenge which is an ancient burial ground located in England.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
 
     {
@@ -95,7 +108,7 @@ export class HomePage {
       desc: "Here is a picture of Hagia Sophia which is located in Istanbul, Turkey.",
       favorited: false,
       shared: false,
-      liked: false
+      deleted: false
     },
   ]
 
@@ -127,16 +140,10 @@ export class HomePage {
     }
   }
 
-  clickLike(wonder) {
+  clickDelete(wonder) {
     let index = this.wonders.indexOf(wonder);
 
-    if(index > -1){
-      if(wonder.liked){
-        this.wonders[index].liked = false;
-      }else{
-        this.wonders[index].liked = true;
-      }
-    }
+    this.wonders.splice(index, 1)
   }
 
 }
